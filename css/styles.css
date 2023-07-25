@@ -16,6 +16,11 @@ body {
     color: white;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 /* general styling */
 .banner {
     height: 80vh;
@@ -75,7 +80,6 @@ body {
 }
 
 
-
 .thumb-wrapper .thumb-unit {
     text-align: center;
 }
@@ -85,7 +89,6 @@ body {
 }
 .thumb-wrapper .thumb {
     height: 500px;
-    background-color: blue;
     margin-bottom: 0.5rem;
 }
 
@@ -103,105 +106,55 @@ body {
 }
 
 .thumb-wrapper .thumb-unit:nth-child(1) .thumb {
-    background-image: url(../img/marie.jpg);
+    background-image: url(../img/wedding.jpg);
 
 }
 
 .thumb-wrapper .thumb-unit:nth-child(2) .thumb {
-    background-image: url(../img/wendy.jpeg);
+    background-image: url(../img/portrait.jpg);
     background-size: top center;
 
 }
 
 .thumb-wrapper .thumb-unit:nth-child(3) .thumb  {
-    background-image: url(../img/graduation.jpg);
+    background-image: url(../img/event.jpg);
     background-size: center;
 
 }
 
-
-/* media queries */
-@media(max-width: 960px) {
-    .thumb-wrapper {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.overlay {
+background-color: rgba(0, 0, 0, 0.8);
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+display: none;
 }
 
-#footer {
-    padding: 4rem 0rem;
-    text-align: center;
+.overlay.show {
+    display: block;
 }
-
-#wedding img  {
- width: 100%;
-}
-
-#wedding .banner  {
-height: 80vh;
-background-image: url(../img/marie.jpg);
-background-size: cover;
-background-position: top center;
-margin-bottom: 2rem;
-}
-
-#wedding .thumb-wrapper {
-    display: grid;
-    grid-template-areas: repeat(3, 1fr);
-}
-#wedding .thumb-wrapper .thumb-unit {
-    height: 500px;
-    background-image: url(../img/marie.jpg);
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-}
-
-#wedding .thumb-wrapper .thumb-unit:nth-child(1) {
-    background-image: url(../img//marie/1.jpg)
-}
-
-#wedding .thumb-wrapper .thumb-unit:nth-child(2) {
-    background-image: url(../img//marie/2.jpg)
-}
-
-#wedding .thumb-wrapper .thumb-unit:nth-child(3) {
-    background-image: url(../img//marie/3.jpg)
-}
-
-#wedding .thumb-wrapper .thumb-unit:nth-child(4) {
-    background-image: url(../img//marie/4.jpg)
-}
-
-#wedding .thumb-wrapper .thumb-unit:nth-child(5) {
-    background-image: url(../img//marie/5.jpg)
-}
-
-#wedding .thumb-wrapper .thumb-unit:nth-child(6) {
-    background-image: url(../img//marie/6.jpg)
-}
-
 
 /* MODAL */
 #modal {
-    width: 60vw;
-    height: 90vh;
+    width: 50vw;
+    height: 70vh;
     position: absolute;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
     transition: all ease-in-out 300ms;
-    display: none;
     background-size: cover;
     background-position: 80%;
+    display: none;
 }
 
 #modal.show {
 display: block;
 }
 
-
-#modal button {
-    background-color: red;
+.overlay button {
     outline: none;
     border: none;
     cursor: pointer;
@@ -209,18 +162,40 @@ display: block;
     position: absolute;
     top: 20px;
     right: 20px;
-    color: white;
+    background-color: transparent;
+}
 
+.overlay button i {
+    font-size: 2rem;
+    color: white;
 }
 
 
+/* styling the view */
 
+#view .banner {
+    background-size: cover;
+    background-position: 40%;
+}
 
+#view .thumb-wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
 
+#view .thumb-wrapper .thumb-unit {
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
 
-
-
-
+#footer {
+    padding: 2rem 0rem;
+    text-align: center;
+    color: white;
+}
 
 
 /* MEDIA QUERIES */
