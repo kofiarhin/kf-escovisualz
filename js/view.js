@@ -1,6 +1,8 @@
 const url = window.location.href;
 const searchParams = new URLSearchParams(new URL(url).search);
 const category = searchParams.get("category") || "marie";
+const modalImage = document.querySelector("#modal img");
+console.log(modalImage);
 
 const loadImages = (category) => {
   const thumbUnits = document.querySelectorAll(".thumb-unit");
@@ -29,7 +31,8 @@ const handleModal = () => {
     modal.classList.add("show");
     overlay.classList.add("show");
     const position = event.target.getAttribute("data-target");
-    modal.style.backgroundImage = `url("/img/${category}/${position}.jpg")`;
+    modalImage.src = `./img/${category}/${position}.jpg`;
+    // modal.style.backgroundImage = `url("/img/${category}/${position}.jpg")`;
   });
 };
 

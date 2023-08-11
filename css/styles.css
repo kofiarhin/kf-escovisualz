@@ -22,7 +22,7 @@ a {
 }
 
 /* general styling */
-.banner {
+.hero {
     height: 80vh;
     display: flex;
     justify-content: center;
@@ -39,7 +39,7 @@ a {
     margin-bottom: 1.4rem;
     font-size: 3rem;
 }
-.banner .link {
+.hero .link {
     text-decoration: none;
     display: inline-block;
     background-color: white;
@@ -48,13 +48,19 @@ a {
     border-radius: 10px;
     cursor: pointer;
     transition: all ease-in-out 300ms;
+    margin-bottom: 1rem;
 }
 
-.banner .link:hover {
-    background-color: white;
-    color: black;
+.hero .link:hover {
+    background-color: black;
+    color: white;
 }
 
+.hero .socials i {
+    color: white; 
+    font-size: 3rem; 
+    background-color: white; 
+}
 .heading {
     font-size: 3rem;
     font-weight: 300;
@@ -101,10 +107,6 @@ a {
     transition: all ease-in-out 300ms;
 }
 
-.thumb-wrapper .thumb:hover {
-    transform: scale(1.08);
-}
-
 .thumb-wrapper .thumb-unit:nth-child(1) .thumb {
     background-image: url(../img/wedding.jpg);
 
@@ -139,15 +141,22 @@ display: none;
 /* MODAL */
 #modal {
     width: 50vw;
-    height: 70vh;
-    position: absolute;
+    height: auto;
+   position: absolute;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
     transition: all ease-in-out 300ms;
     background-size: cover;
-    background-position: 80%;
+    background-position: top center;
     display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal img {
+    width: 100%;
 }
 
 #modal.show {
@@ -175,7 +184,9 @@ display: block;
 
 #view .banner {
     background-size: cover;
-    background-position: 40%;
+    background-position: top center;
+    height: 50vh;
+    margin-bottom: 1rem;
 }
 
 #view .thumb-wrapper {
@@ -199,9 +210,12 @@ display: block;
 
 
 /* MEDIA QUERIES */
-@media(max-width: 800px) {
+
+/* medium screen */
+@media(max-width: 960px) {
+
     .thumb-wrapper {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr)
     }
 
     .thumb-wrapper .thumb {
@@ -216,4 +230,57 @@ display: block;
         font-size: 0.8rem;
         padding: 0.4rem 1rem;
     }
+
+    #view .banner {
+        height: 50vh;
+    }
+
+}
+
+
+/* smaller screen */
+@media(max-width: 650px) {
+
+    .heading {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+#info .text-wrapper {
+    width: 95%;
+    padding-bottom: 1rem;
+
+}
+
+#info .info {
+        font-size: 1rem;
+}
+
+#portfolio .thumb-wrapper {
+    display: block;
+ }
+
+ #portfolio .thumb-wrapper .thumb {
+    height: 300px;
+    margin-bottom: 1rem;
+    margin: 0 auto 2rem;
+ }
+
+ #view .banner {
+margin-bottom: 1rem;
+ }
+
+ #view .thumb-wrapper  {
+display: block;
+ }
+
+ #view .thumb-wrapper .thumb-unit {
+    height: 400px;
+margin-bottom: 1rem;
+ }
+
+ #modal {
+    width: 80vw;
+ }
+
 }
