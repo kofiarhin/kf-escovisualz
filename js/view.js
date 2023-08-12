@@ -2,7 +2,6 @@ const url = window.location.href;
 const searchParams = new URLSearchParams(new URL(url).search);
 const category = searchParams.get("category") || "marie";
 const modalImage = document.querySelector("#modal img");
-console.log(modalImage);
 
 const loadImages = (category) => {
   const thumbUnits = document.querySelectorAll(".thumb-unit");
@@ -16,6 +15,7 @@ const loadImages = (category) => {
   });
 };
 
+// handle modal
 const handleModal = () => {
   const modal = document.querySelector("#modal");
   const close = document.querySelector(".overlay button");
@@ -23,6 +23,7 @@ const handleModal = () => {
   const overlay = document.querySelector(".overlay");
 
   close.addEventListener("click", function (event) {
+    console.log("close button clicked");
     modal.classList.remove("show");
     overlay.classList.remove("show");
   });
@@ -36,5 +37,6 @@ const handleModal = () => {
   });
 };
 
+// load moadl images and handle when user clicks on image
 loadImages(category);
 handleModal();
