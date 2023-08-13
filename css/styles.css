@@ -19,6 +19,12 @@ a {
     color: white;
 }
 
+.container {
+    width: 1200px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
 .spacer-top {
     margin-top: 3rem;
 }
@@ -85,9 +91,6 @@ a {
     flex-direction: column;
 }
 
-.container {
-    padding: 0px 50px;
-}
 
 .name {
     font-weight: 400;
@@ -132,7 +135,18 @@ a {
 #info p {
     font-size: 1.2rem;
     text-align: center;
+margin-bottom: 1rem;
 }
+
+ #info .socials {
+     text-align: center;
+ }
+
+ #info .socials a {
+    display: inline-block;
+    margin-left: 1rem;
+    font-size: 2rem; 
+ }
 /* portfolio */
 .thumb-wrapper {
     display: grid;
@@ -140,13 +154,13 @@ a {
     grid-gap: 20px;
 }
 
-
 .thumb-wrapper .thumb-unit {
     text-align: center;
 }
 
 .thumb-wrapper .thumb-unit h2 {
     font-weight: 300;
+    margin-bottom: 1rem; 
 }
 .thumb-wrapper .thumb {
     height: 500px;
@@ -264,7 +278,7 @@ display: block;
 }
 
 #footer {
-    padding: 2rem 0rem;
+    padding: 4rem 0rem;
     text-align: center;
     color: white;
 }
@@ -346,16 +360,20 @@ display: block;
 /* smaller screen */
 @media(max-width: 650px) {
 
+#banner-image, #view .banner  {
+height: 30vh;
+}
+
     .heading {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
     }
 
         #banner-image {
-            height: 30vh;
+            height: 20vh;
         }
 
-    .main-header h1 {
+.main-header h1 {
 font-size: 1.2rem;
     }
 .hero {
@@ -371,6 +389,7 @@ font-size: 1.2rem;
         font-size: 1rem;
 }
 
+/* styling portfolio */
 #portfolio .thumb-wrapper {
     display: block;
  }
@@ -381,6 +400,9 @@ font-size: 1.2rem;
     margin: 0 auto 2rem;
  }
 
+
+
+ /* view styling */
  #view .banner {
 margin-bottom: 1rem;
  }
@@ -395,7 +417,7 @@ margin-bottom: 1rem;
  }
 
  #modal {
-    width: 80vw;
+    width: 90vw;
  }
 
 
