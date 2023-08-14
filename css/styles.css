@@ -30,8 +30,6 @@ a {
 }
 
 /* banner image */
-
-
 #banner-image {
     width: 100vw;
     height: 50vh;
@@ -91,11 +89,14 @@ a {
     flex-direction: column;
 }
 
-
 .name {
     font-weight: 400;
     margin-bottom: 1.4rem;
     font-size: 3rem;
+}
+
+.hero .links-wrapper {
+    display: flex;
 }
 .hero .link {
     text-decoration: none;
@@ -107,6 +108,13 @@ a {
     cursor: pointer;
     transition: all ease-in-out 300ms;
     margin-bottom: 1rem;
+margin-left: 1rem;
+text-align: center;
+}
+
+.hero .link.pricing {
+    background-color: rgb(79, 79, 176);
+    color: white;
 }
 
 .hero .link:hover {
@@ -128,6 +136,10 @@ a {
 }
 
 /* info */
+
+#info {
+    padding: 2rem 0rem;
+}
 #info .text-wrapper {
     width: 80%;
     margin: 0 auto 2rem;
@@ -200,8 +212,9 @@ margin-bottom: 1rem;
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: rgba(0,0, 0, 0.8);
+    background-color: rgba(0,0, 0, 0.9);
     display: none;
+    z-index: 5000;
 }
 
 .overlay.show {
@@ -209,7 +222,7 @@ margin-bottom: 1rem;
 }
 
 #modal {
-    width: 50vw;
+    width: 30vw;
     height: auto;
    position: absolute;
    top: 50%;
@@ -232,14 +245,15 @@ margin-bottom: 1rem;
 display: block;
 }
 
+
 .overlay button {
     outline: none;
     border: none;
     cursor: pointer;
     padding: 1rem 2rem;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 10px;
     background-color: transparent;
 }
 
@@ -325,11 +339,6 @@ display: block;
 }
 /* MEDIA QUERIES */
 
-@media (min-width: 1201px) { 
-
-  
-}
-
 /* medium screen */
 @media(max-width: 960px) {
 
@@ -354,6 +363,10 @@ display: block;
         height: 50vh;
     }
 
+    #modal {
+        width: 70vw;
+    }
+
 }
 
 
@@ -373,12 +386,25 @@ height: 30vh;
             height: 20vh;
         }
 
+        /* main header */
 .main-header h1 {
 font-size: 1.2rem;
     }
+
+.main-header nav a {
+    font-size: 0.9rem;
+}
 .hero {
     background-image: url(../img/banner-small.jpg)
 }
+
+.hero .links-wrapper {
+    flex-direction: column;
+}
+
+
+
+/* info section */
 #info .text-wrapper {
     width: 95%;
     padding-bottom: 1rem;
@@ -417,7 +443,7 @@ margin-bottom: 1rem;
  }
 
  #modal {
-    width: 90vw;
+    width: 80vw;
  }
 
 

@@ -1,6 +1,7 @@
 const url = window.location.href;
 const searchParams = new URLSearchParams(new URL(url).search);
-const category = searchParams.get("category") || "marie";
+const categories = ["weddings", "events", "portraits"];
+const category = searchParams.get("category") || "wedding";
 const modalImage = document.querySelector("#modal img");
 
 const loadImages = (category) => {
